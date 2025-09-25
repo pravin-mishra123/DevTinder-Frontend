@@ -11,3 +11,7 @@
 - git remote add origin https://github.com/pravin-mishra123/DevTinder-Frontend.git
 - git branch -M main
 - git push -u origin main
+
+### Episode - 15 || DevTinder UI - part1
+- Create a Vite + React Application
+- Remove unecessory code and create a Hello World App
