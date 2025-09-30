@@ -15,3 +15,6 @@
 ### Episode - 15 || DevTinder UI - part1
 - Create a Vite + React Application
 - Remove unecessory code and create a Hello World App
+- install tailwind css => npm install -D tailwindcss postcss autoprefixer npx tailwindcss init -p
+- install daisyUI and do all the configuration properly
+- Add Navbar component to the App.jsx
