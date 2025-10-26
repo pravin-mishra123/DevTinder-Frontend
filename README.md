@@ -41,5 +41,6 @@
 - Login and see if your data is coming properly in the store
 - NavBar should update as soon as user logs in 
 - Refactor our code  to add constants file + create a components folder + pages folder
+- Code restructure in the foder and components format
 
 
