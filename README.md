@@ -39,9 +39,13 @@
 - configureStore => Provider => createSlice => add reducer to slice
 - Add redux dev tool as chrome extesnsion
 - Login and see if your data is coming properly in the store
-- NavBar should update as soon as user logs in 
-- Refactor our code  to add constants file + create a components folder + pages folderd
+- NavBar should update as soon as user logs in
+- Refactor our code to add constants file + create a components folder + pages folderd
 
 ### Episode - 17 || DevTinder UI - part2
+
 - You should not be access other routes without login
 - If token is not present, redirect user to login page
+- Created logout feature
+- Created UserCard component to show Card in the feed page
+- imported UserCard in feed page
