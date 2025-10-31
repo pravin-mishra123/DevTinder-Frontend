@@ -51,3 +51,4 @@
 - imported UserCard in feed page
 - Get the feed and add the feed in the store
 - build the user card in the feed
+- Create EditProfile component
