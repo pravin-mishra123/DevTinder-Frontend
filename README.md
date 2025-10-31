@@ -49,3 +49,5 @@
 - Created logout feature
 - Created UserCard component to show Card in the feed page
 - imported UserCard in feed page
+- Get the feed and add the feed in the store
+- build the user card in the feed
