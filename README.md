@@ -55,3 +55,5 @@
 - Build EditProfile feature and code formatting.
 - Show toast message on saving profile
 - Create connections page
+- New page - See all connections 
+- New page -  See all my connection Requests
