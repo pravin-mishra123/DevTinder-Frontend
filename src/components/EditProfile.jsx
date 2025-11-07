@@ -14,7 +14,7 @@ const EditProfile = ({ user }) => {
   const [about, setAbout] = useState(user.about);
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
   const [error, setError] = useState("");
-  const [showTost, setShowToast] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const handleSaveProfile = async () => {
     setError("");
@@ -135,7 +135,7 @@ const EditProfile = ({ user }) => {
         />
       </div>
       <div className="toast toast-top toast-start">
-        {showTost && (
+        {showToast && (
           <div className="alert alert-success">
             <span>Profile save successfully</span>
           </div>

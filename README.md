@@ -53,3 +53,5 @@
 - build the user card in the feed
 - Create EditProfile component 
 - Build EditProfile feature and code formatting.
+- Show toast message on saving profile
+- Create connections page
