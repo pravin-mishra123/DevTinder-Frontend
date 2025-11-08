@@ -1,31 +1,44 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addRequests } from "../redux/requestsSlice";
+import { addRequests, removeRequests } from "../redux/requestsSlice";
 import { BASE_URL } from "../utils/constants";
 
 const Requests = () => {
-    const requests = useSelector((state) => state.requests);
+  const requests = useSelector((state) => state.requests);
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
-
-
-    const fetchRequests = async () => {
-      try {
-        const res = await axios.get(BASE_URL + "/user/requests/received", {
-          withCredentials: true,
-        });
-        console.log("Requests fetched successfully:", res.data.data);
-        dispatch(addRequests(res.data.data));
-        
-      } catch (error) {
-        console.log(error);
-      }
+  const fetchRequests = async () => {
+    try {
+      const res = await axios.get(BASE_URL + "/user/requests/received", {
+        withCredentials: true,
+      });
+      console.log("Requests fetched successfully:", res.data.data);
+      dispatch(addRequests(res.data.data));
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    useEffect(() => {
-      fetchRequests();
-    }, []);
+  useEffect(() => {
+    fetchRequests();
+  }, []);
+
+  const handleReviewRequest = async (status, _id) => {
+    try {
+      const res = await axios.post(
+        BASE_URL + "/request/review" + "/" + status + "/" + _id,
+        {},
+        {
+          withCredentials: true,
+        }
+      );
+      dispatch(removeRequests(_id));
+      console.log("Request reviewed successfully:", res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   if (!requests) return;
 
@@ -47,7 +60,10 @@ const Requests = () => {
             request.fromUserId;
 
           return (
-            <div key={_id} className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto">
+            <div
+              key={_id}
+              className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300 w-2/3 mx-auto"
+            >
               <div>
                 <img
                   className="w-20 h-20 rounded-full"
@@ -63,8 +79,18 @@ const Requests = () => {
                 <p>{about}</p>
               </div>
               <div>
-                <button className="btn btn-primary mx-2">Reject</button>
-                <button className="btn btn-secondary mx-2">Accept</button>
+                <button
+                  className="btn btn-primary mx-2"
+                  onClick={() => handleReviewRequest("rejected", request._id)}
+                >
+                  Reject
+                </button>
+                <button
+                  className="btn btn-secondary mx-2"
+                  onClick={() => handleReviewRequest("accepted", request._id)}
+                >
+                  Accept
+                </button>
               </div>
             </div>
           );
@@ -72,6 +98,6 @@ const Requests = () => {
       </div>
     </>
   );
-}
+};
 
 export default Requests;

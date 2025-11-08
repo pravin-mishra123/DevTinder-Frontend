@@ -51,9 +51,16 @@
 - imported UserCard in feed page
 - Get the feed and add the feed in the store
 - build the user card in the feed
-- Create EditProfile component 
+- Create EditProfile component
 - Build EditProfile feature and code formatting.
 - Show toast message on saving profile
 - Create connections page
-- New page - See all connections 
-- New page -  See all my connection Requests
+- New page - See all connections
+- New page - See all my connection Requests
+- Feature - Accept / Reject Connection Request
+
+Remaining :
+
+- send / ignore the user card from feed
+- SignUp new User
+- E2E Testing
