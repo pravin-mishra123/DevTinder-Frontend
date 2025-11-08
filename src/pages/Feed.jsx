@@ -25,6 +25,13 @@ function Feed() {
     getFeedData();
   }, []);
 
+  if (!feed) return;
+  if (feed.length <= 0)
+    return (
+      <h2 className=" flex justify-center text-center mt-10 text-2xl">
+        No more users in feed
+      </h2>
+    );
   return (
     feed && (
       <div className="flex justify-center my-10">

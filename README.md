@@ -58,9 +58,10 @@
 - New page - See all connections
 - New page - See all my connection Requests
 - Feature - Accept / Reject Connection Request
+- send / ignore the user card from feed
 
 Remaining :
 
-- send / ignore the user card from feed
+
 - SignUp new User
 - E2E Testing
